@@ -8,7 +8,7 @@ const customers =  useSelector((state)=> state.customers)
 const dispatch = useDispatch();
 
 function deleteHandler(index){
- dispatch (deleteCustomer(index))
+ dispatch(deleteCustomer(index))
 
 }
   return (
@@ -16,7 +16,7 @@ function deleteHandler(index){
       <h2>Customer List</h2>
       <ul style={{listStyle: 'none',}}>
         {customers.map((customer, index) => (
-          <li>{customer} <button onClick={()=> deleteHandler}>delete</button></li>
+          <li>{customer} <button onClick={()=> deleteHandler(index)}>delete</button></li>
         ))} 
       </ul>
     </div>

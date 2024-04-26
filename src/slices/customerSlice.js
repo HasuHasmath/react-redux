@@ -9,13 +9,12 @@ const customerSlice = createSlice({
         addCustomer(state,action){
             state.push(action.payload)
         },
-        deleteCustomer(state,action){
-            const deleteIndex = action.payload;
-          return  state.filter((val,index)=> index !== deleteIndex)
-
-        }
+       deleteCustomer(state, action) {
+  const deleteIndex = action.payload;
+  return state.filter((val, index) => index !== deleteIndex);
+}
     }
 })
 
-export const { addCustomer, deleteCustomer }= customerSlice.actions
+export const { addCustomer, deleteCustomer }= customerSlice.actions;
 export default  customerSlice.reducer
