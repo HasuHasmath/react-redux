@@ -14,4 +14,4 @@ const customerSlice = createSlice({
 })
 
 export const { addCustomer }= customerSlice.actions
-export default customerSlice.reducer
+export default  customerSlice.reducer
