@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import CustomerView from "./CustomerView";
 
 export default function CustomerAdd() {
   const [input, setInput] = useState("");
@@ -6,13 +7,17 @@ export default function CustomerAdd() {
   function addCustomer() {
     if (input) {
       setCustomers((previousState) => [...previousState, input]);
+      setInput("");
     }
   }
   return (
-    <div> 
-      <h3>Add New Customer</h3>
-      <input type="text" onChange={(e) => setInput(e.target.value)} />
-      <button onClick={addCustomer}>Add</button>
-    </div>
+    <>
+      <div>
+        <h3>Add New Customer</h3>
+        <input type="text" value={input}  onChange={(e) => setInput(e.target.value)} />
+        <button onClick={addCustomer}>Add</button>
+      </div>
+      <CustomerView customers={customers}/>
+    </>
   );
 }
